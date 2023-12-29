@@ -44,12 +44,12 @@ const GenSpec = () => {
           </div>
         </div>
 
-        <p className="text-left text-xl text-red-500 italic mt-4 pb-14">
+        <p className="text-left text-xl text-red-500 italic mt-4 lg:pb-6 ">
           <strong>Transportation from factory, Extra at Actuals:</strong>{" "}
           Approx. Rs. 5,000 - 7,000
         </p>
 
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center items-center max-sm:pb-10'>
           <img src={kubo} width={150} alt="" />
         </div>
       </div>
