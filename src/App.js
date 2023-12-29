@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import A4Paper from "./components/A4Paper";
+import About from "./components/About";
+import DownloadBtn from "./components/DownloadBtn";
+import TermsAndCond from "./components/TermsAndCond";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <About />
+      <TermsAndCond/>
+      <DownloadBtn />
+      {/* <A4Paper/> */}
     </div>
   );
 }
-
-export default App;
