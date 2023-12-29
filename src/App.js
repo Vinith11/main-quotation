@@ -7,10 +7,10 @@ import TermsAndCond from "./components/TermsAndCond";
 export default function App() {
   return (
     <div>
-      {/* <Main/> */}
-      {/* <About />
+      <Main/>
+      <About />
       <TermsAndCond/>
-      <DownloadBtn /> */}
+      <DownloadBtn />
       {/* <A4Paper/> */}
     </div>
   );
