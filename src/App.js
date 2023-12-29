@@ -8,9 +8,9 @@ export default function App() {
   return (
     <div>
       <Main/>
-      <About />
-      <TermsAndCond/>
-      <DownloadBtn />
+      {/* <About />
+      <TermsAndCond/> */}
+      
       {/* <A4Paper/> */}
     </div>
   );

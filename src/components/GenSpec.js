@@ -1,13 +1,14 @@
 import React from 'react'
+import kubo from "../assets/kubo.jpg"
 
 const GenSpec = () => {
   return (
     <div>
-        <h1 className="text-left italic text-2xl font-bold underline px-1 py-3">
+        <h1 className="text-left italic text-2xl font-semibold underline px-1 py-3">
           ASHOK LEYLAND Make:
         </h1>
         <div className="border border-black p-4 max-w-5xl">
-          <p className="text-left text-lg italic">
+          <p className="text-left text-m italic">
             <strong>OL125D:</strong>{" "}
             <strong className="text-blue-500">125 KVA </strong> Diesel
             Generating Set comprising Liquid Cooled Engine Type{" "}
@@ -47,6 +48,10 @@ const GenSpec = () => {
           <strong>Transportation from factory, Extra at Actuals:</strong>{" "}
           Approx. Rs. 5,000 - 7,000
         </p>
+
+        <div className='flex justify-center items-center'>
+          <img src={kubo} width={150} alt="" />
+        </div>
       </div>
   )
 }

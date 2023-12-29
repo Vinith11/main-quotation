@@ -8,7 +8,7 @@ const DownloadBtn = () => {
     window.print();
   };
   return (
-    <div>
+    <div className="w-a4-w h-a4-h">
         {!isDownloaded && (
         <button onClick={handleDownload}>
           Download

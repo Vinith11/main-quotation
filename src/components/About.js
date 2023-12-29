@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <>
-      <div className="border border-black w-a4-w h-a4-h">
+      <div className=" w-a4-w h-a4-h">
         <div className="text-left ">
           <h1 className="text-4xl font-bold underline mb-4 pt-10 text-center">
             ABOUT US
