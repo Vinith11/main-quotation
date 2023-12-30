@@ -14,13 +14,12 @@ const Main = () => {
           <div className="pt-2 border-b-2 border-black w-full">
             <img
               src={header}
-              alt="Header Image"
               style={{ width: "1000px", height: "auto" }}
             />
           </div>
 
           <div className="pt-4 border-b-2 border-black w-full">
-            <img src={Companyies} alt="Header Image" />
+            <img src={Companyies}  />
           </div>
           <h1 className="pt-3 pb-4 text-3xl text-center font-bold  underline">
             Quotation
