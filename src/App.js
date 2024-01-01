@@ -1,17 +1,19 @@
-import A4Paper from "./components/A4Paper";
-import About from "./components/About";
-import DownloadBtn from "./components/DownloadBtn";
 import Main from "./components/Main";
-import TermsAndCond from "./components/TermsAndCond";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Form from "./Form/Form";
+import { PrimeReactProvider } from "primereact/api";
 
 export default function App() {
   return (
-    <div>
-      <Main/>
-      {/* <About />
-      <TermsAndCond/> */}
-      
-      {/* <A4Paper/> */}
-    </div>
+    <>
+      <PrimeReactProvider>
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
+        </Routes>
+      </PrimeReactProvider>
+    </>
   );
 }

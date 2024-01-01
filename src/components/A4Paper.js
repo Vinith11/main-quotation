@@ -1,7 +1,4 @@
-// YourReactComponent.js
 import React, { useState } from 'react';
-import About from './About';
-import TermsAndCond from './TermsAndCond';
 import Main from './Main';
 
 const A4Paper = () => {
