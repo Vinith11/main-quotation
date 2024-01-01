@@ -5,9 +5,20 @@ import GenSpec from "./GenSpec";
 import About from "./About";
 import DownloadBtn from "./DownloadBtn";
 import TermsAndCond from "./TermsAndCond";
-import '../CustomCss/Main.css'
+import "../CustomCss/Main.css";
+import { useState } from "react";
 
-const Main = () => {
+const Main = ({ clientInfo, generatorInfo }) => {
+  console.log(clientInfo);
+  console.log(generatorInfo);
+
+  // both the above are objects, you can use them to display the data in the pdf to access them
+  // you can use clientInfo.companyName , clientInfo.address , clientInfo.email , clientInfo.phone
+
+  // for generatorInfo you can use generatorInfo.generatorCompany , generatorInfo.modelName , generatorInfo.controller  and soo on
+
+  const [print, setprint] = useState(true);
+
   return (
     <>
       <div className="main-container-Main">
@@ -49,9 +60,25 @@ const Main = () => {
           </div>
           <div>
             <TermsAndCond />
+
+            {print && (
+              <button
+                className="py-2 px-4 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition-colors"
+                onClick={() => {
+
+                  setprint(false);
+                  setTimeout(() => {
+                    document.title = "Quotation";
+                    window.print();
+                  }, 1000);
+                }}
+              >
+                Click me
+              </button>
+            )}
           </div>
           <div>
-            <DownloadBtn />
+            <br />
           </div>
         </div>
       </div>
