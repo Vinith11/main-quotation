@@ -10,7 +10,7 @@ export default function App() {
     <>
       <PrimeReactProvider>
         <Routes>
-          <Route exact path="/" element={<Main />} />
+          <Route exact path="/" element={<Clientinfo />} />
           <Route path="/form" element={<Form />} />
           <Route path="/clientinfo" element={<Clientinfo />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
