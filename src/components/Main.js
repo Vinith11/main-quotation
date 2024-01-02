@@ -33,11 +33,9 @@ const Main = ({ clientInfo, generatorInfo }) => {
             </div>
             <div className="flex justify-between pt-2 border-b-2 border-black w-full">
               <div>
-                <strong> Name: Nandagundi Oils and Industries</strong>
+                <strong> Name: {clientInfo.companyName}</strong>
                 <br />
-                <strong style={{ color: "red" }}>Bauxite Road</strong>
-                <br />
-                <strong>Belagavi , Karnataka</strong>
+                <strong style={{ color: "red" }}>Address: {clientInfo.address}</strong>
               </div>
               <div>
                 Your Ref: Telephonic
@@ -63,13 +61,13 @@ const Main = ({ clientInfo, generatorInfo }) => {
             </p>
           </div>
           <div className="h-1/2">
-            <GenSpec />
+            <GenSpec {...generatorInfo} />
           </div>
           <div className="h-1/2">
-            <GenSpec />
+            <GenSpec {...generatorInfo}/>
           </div>
           <div className="h-1/2">
-            <GenSpec />
+            <GenSpec {...generatorInfo}/>
           </div>
           <div>
             <About />
