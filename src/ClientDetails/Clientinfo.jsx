@@ -37,7 +37,7 @@ export default function Clientinfo() {
   const [companyNameSuggestions, setcompanyNameSuggestions] = useState([]);
   const [userStartedTyping, setUserStartedTyping] = useState(false);
 
-  //   comapanysuggestions m
+  //   co
 
   const fetchComapanySuggestions = async (value) => {
     setshowCompanySuggestion(true);
@@ -68,7 +68,7 @@ export default function Clientinfo() {
     }
   }, [generatorInfo.generatorCompany, userStartedTyping]);
 
-  //   model name suggestions
+  //   mo
 
   const fetchModelSuggestions = async (value) => {
     if (generatorInfo.generatorCompany.length === 0) {
@@ -140,7 +140,6 @@ export default function Clientinfo() {
     }
   };
 
-  // set controller and actuator
 
   const setControllerAndActuator = async (modelName) => {
     const response = await databases.listDocuments(dbid, cid, [
@@ -154,6 +153,29 @@ export default function Clientinfo() {
       controller: response.documents[0].contoroler,
       actuator: response.documents[0].actuator,
     });
+  };
+
+  // Inside your component function
+  const [showControllerSuggestion, setShowControllerSuggestion] =
+    useState(false);
+  const [controllerSuggestions, setControllerSuggestions] = useState([
+    "DSE 7320 MK II",
+    "DSE 4520 MK II",
+    "DEIF SGC 420",
+    "DEIF SGC 120",
+    "SEDEMAC",
+  ]);
+
+  const handleControllerFocus = () => {
+    setShowControllerSuggestion(true);
+  };
+
+  const handleControllerSelection = (suggestion) => {
+    setGeneratorInfo({
+      ...generatorInfo,
+      controller: suggestion,
+    });
+    setShowControllerSuggestion(false);
   };
 
   return (
@@ -312,8 +334,22 @@ export default function Clientinfo() {
               onChange={(e) =>
                 handleChangeGeneratorInfo("controller", e.target.value)
               }
+              onFocus={handleControllerFocus} // Add onFocus event handler
               className="field-input"
             />
+            {showControllerSuggestion && (
+              <ul className="mt-2 max-h-32 overflow-y-auto border border-gray-300 rounded-md shadow-md">
+                {controllerSuggestions.map((suggestion, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleControllerSelection(suggestion)}
+                    className="cursor-pointer py-2 px-3 hover:bg-gray-100 bg-gray-50"
+                  >
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div className="form-field">
@@ -412,7 +448,7 @@ function getFormattedDate() {
   const mm = String(today.getMonth() + 1).padStart(2, "0");
   const yyyy = today.getFullYear();
 
-  return `${mm}/${dd}/${yyyy}`;
+  return `${dd}/${mm}/${yyyy}`;
 }
 
 function generateAutoRef() {
