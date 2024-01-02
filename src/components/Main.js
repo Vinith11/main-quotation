@@ -31,6 +31,20 @@ const Main = ({ clientInfo, generatorInfo }) => {
                 alt=""
               />
             </div>
+            <div className="flex justify-between pt-2 border-b-2 border-black w-full">
+              <div>
+                <strong> Name: {clientInfo.companyName}</strong>
+                <br />
+                <strong style={{ color: "red" }}>Address: {clientInfo.address}</strong>
+              </div>
+              <div>
+                Your Ref: Telephonic
+                <br />
+                Our Ref.no: PT.DG8859.23
+                <br />
+                DATE:25/12/2023
+              </div>
+            </div>
 
             <div className="pt-4 border-b-2 border-black w-full">
               <img src={Companyies} alt="" />
@@ -47,13 +61,13 @@ const Main = ({ clientInfo, generatorInfo }) => {
             </p>
           </div>
           <div className="h-1/2">
-            <GenSpec />
+            <GenSpec {...generatorInfo} />
           </div>
           <div className="h-1/2">
-            <GenSpec />
+            <GenSpec {...generatorInfo}/>
           </div>
           <div className="h-1/2">
-            <GenSpec />
+            <GenSpec {...generatorInfo}/>
           </div>
           <div>
             <About />
@@ -65,7 +79,6 @@ const Main = ({ clientInfo, generatorInfo }) => {
               <button
                 className="py-2 px-4 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition-colors"
                 onClick={() => {
-
                   setprint(false);
                   setTimeout(() => {
                     document.title = "Quotation";
